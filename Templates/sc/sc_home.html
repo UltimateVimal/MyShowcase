@@ -1,0 +1,26 @@
+{% extends 'sc/sc_base.html' %}
+{% block title %}Vimal Yadav Showcase Home Page{% endblock title %}
+{% block content %}
+{% load static %}
+<section class="container-fluid">
+    <div class="row justify-content-around text-center text-white mt-5">
+        <div class="col-sm-12">
+            <h3>Welcome To Vimal Yadav's Showcase</h3>
+        </div>
+    </div>
+    <div style="margin-top: 50px;">&nbsp;</div>
+    <div class="row justify-content-around">
+        <div class="col-sm-4">
+            <div> <a href="sls/slshome" style="color: white;">3. Sign up and Sign in</a></div>
+            <div> <a href="sfu/sfuhome" style="color: white;">2. Upload a file and view it</a></div>
+            <div> <a href="crud/crudhome" style="color: white;">1. Insert, Read, Update and Delete a Student Record</a></div>
+        </div>
+        <div class="col-sm-4">
+            <a href="/schome" style="color: white;"></a>
+        </div>
+        <div class="col-sm-4">
+            <a href="/schome" style="color: white;"></a>
+        </div>
+    </div>
+</section>
+{% endblock content %}

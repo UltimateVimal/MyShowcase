@@ -1,0 +1,33 @@
+{% extends 'crud/crud_base.html' %}
+{% block title %}CRUD HOME{% endblock title %}
+{% block content %}
+<section class="container">
+    <div class="row justify-content-around text-center text-white mt-5">
+        <div class="col-sm-8">
+            <h3>1. Insert, Read, Update and Delete a Student Record</h3>
+        </div>
+    </div>
+    <div style="margin-top: 150px;">&nbsp;</div>
+    <div class="row justify-content-around">
+        <div class="col-sm-3">
+            <a href="addstudent" class="btn btn-primary float-end">Add New Student</a>
+        </div>
+        <div class="col-sm-3">
+            <a href="displayall" class="btn btn-primary float-end">View All Students</a>
+        </div>
+        <div class="col-sm-3">
+            <a href="crudhome" class="btn btn-primary float-end">Edit Student</a>
+        </div>
+        <div class="col-sm-3">
+            <a href="deletestudent" class="btn btn-primary float-end">Delete Student</a>
+        </div>
+    </div>
+    <div style="margin-top: 150px;">&nbsp;</div>
+    <div class="row justify-content-around text-center text-white mt-5">
+        <div class="col-sm-12 text-center">
+            <a href="/schome" class="btn" style="background-color: #330d00; color: white;">goto showcase home</a>
+        </div>
+    </div>
+</section>
+{% endblock content %}
+

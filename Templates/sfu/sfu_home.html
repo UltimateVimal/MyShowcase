@@ -1,0 +1,35 @@
+{% extends 'sfu/sfu_base.html' %}
+{% block title %}Simple File Upload{% endblock title %}
+{% block content %}
+<section class="container">
+    <div class="row justify-content-around text-center text-white mt-5">
+        <div class="col-sm-8">
+            <h3 style="color: darkred;">2. Upload a file and view it</h3>
+        </div>
+    </div>
+    <div style="margin-top: 150px;">&nbsp;</div>
+    <div class="row justify-content-around">
+        <div class="col-sm-12 text-center">
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input type="file" name="ctrlUserFile">
+                <input type="submit" value="Upload">
+            </form>
+        </div>
+    </div>
+    <div class="row justify-content-around text-center text-white mt-5">
+        <div class="col-sm-12 text-center">
+            {% if FileUrl %}
+            <p style="color: darkred;">Link of uploaded file is:</p>
+            <a href="{{ FileUrl }}">{{ FileUrl }}</a>
+            {% endif %}
+        </div>
+    </div>
+    <div style="margin-top: 110px;">&nbsp;</div>
+    <div class="row justify-content-around text-center text-white mt-5">
+        <div class="col-sm-12 text-center">
+            <a href="/schome" class="btn" style="background-color: #330d00; color: white;">goto showcase home</a>
+        </div>
+    </div>
+</section>
+{% endblock content %}

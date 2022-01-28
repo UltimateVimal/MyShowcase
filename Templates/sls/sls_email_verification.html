@@ -1,0 +1,10 @@
+{% autoescape off %}
+Hello {{ UserName }},
+
+Thanks for registering with us.
+
+Please verify your email by clicking on following link:
+
+Verification Link: http://{{ domain }}{% url 'verify' uidb64=uid token=token %}
+
+{% endautoescape %}

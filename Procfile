@@ -1,0 +1,1 @@
+web: gunicorn MyShowcase.wsgi   --log-file –

@@ -1,0 +1,47 @@
+{% extends 'crud/crud_base.html' %}
+{% block title %}Delete Student{% endblock title %}
+{% block content %}
+<section class="container">
+    <div class="row justify-content-around text-center text-white mt-5">
+        <div class="col-sm-8">
+            <h3>Delete Student</h3>
+        </div>
+    </div>
+    <div class="row justify-content-around">
+        <div class="col-sm-8"><br>
+            <table class="table table-dark table-hover">
+                <thead>
+                    <tr>
+                      <th scope="col">Sno</th>
+                      <th scope="col">Name</th>
+                      <th scope="col">Roll No</th>
+                      <th scope="col">City</th>
+                      <th scope="col">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for r in alldata %}
+                    <tr>
+                      <th scope="row">{{forloop.counter}}</th>
+                      <td>{{r.name}}</td>
+                      <td>{{r.rollno}}</td>
+                      <td>{{r.city}}</td>
+                      <td>
+                        <form action="deletestudent" method="POST"> 
+                            {% csrf_token %} 
+                            <input type="hidden" name="hdStId" value={{r.id}}>
+                            <input type="submit" value="Delete" class="btn btn-danger btn-sm"> </td>
+                        </form>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row justify-content-around text-center text-white mt-5">
+      <div class="col-sm-8">
+          <a href="crudhome" class="btn btn-primary">back to home</a>
+      </div>
+  </div>
+</section>
+{% endblock content %}

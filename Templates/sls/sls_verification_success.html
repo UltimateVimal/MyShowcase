@@ -1,0 +1,15 @@
+{% extends 'sls/sls_base.html' %}
+{% block title %}Email Verification Success{% endblock title %}
+{% block content %}
+{% if Uname %}
+<div>
+    <h4> Dear {{ Uname }}</h4>
+    <h3>Your email is verified successfully. Please login with your credentials</h3>
+</div>
+<div>
+    <a href="/sls/login" style="color: white;">click here to login</a>
+</div>
+{% else %}
+<p>Something wrong happened</p>
+{% endif %}
+{% endblock content %}

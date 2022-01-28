@@ -1,0 +1,21 @@
+{% extends 'crud/crud_base.html' %}
+{% block title %}Add New Student{% endblock title %}
+{% block content %}
+<section class="container">
+    <div class="row justify-content-around text-center text-white mt-5">
+        <div class="col-sm-8">
+            <h3>Add New Student</h3>
+        </div>
+    </div>
+    <div class="row justify-content-around">
+        <div class="col-sm-4">
+            <form action="addstudent" method="post" class="bg-white p-3 rounded shadow">
+                {% csrf_token %}
+                {{form.as_p}}
+                <input type="submit" value="Save" class="btn btn-primary">
+                <a href="crudhome" class="btn btn-primary">Cancel</a>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock content %}
