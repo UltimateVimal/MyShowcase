@@ -19,16 +19,16 @@ from decouple import config
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 EMAIL_USE_TLS=EMAIL_USE_TLS
-EMAIL_HOST=EMAIL_HOST
-EMAIL_HOST_USER=EMAIL_HOST_USER
+EMAIL_HOST=config('EMAIL_HOST',default='localhost')
+EMAIL_HOST_USER=config('EMAIL_HOST_USER',default='')
 EMAIL_HOST_PASSWORD=config('EMAIL_HOST_PASSWORD',default='',cast=str)
-EMAIL_PORT=EMAIL_PORT
+EMAIL_PORT=config('EMAIL_PORT',default=25,cast=int)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-v=eb-o@7yc#-gl1ke_wt*ehffuak#tjrs*zjwt4of=8l5=cue-'
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -91,9 +91,9 @@ WSGI_APPLICATION = 'MyShowcase.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'DBone',
-        'USER': 'postgres',
-        'PASSWORD': 'abc@123',
+        'NAME': config('DB_NAME'),
+        'USER': config('DB_USER'),
+        'PASSWORD': config('DB_PASSWORD'),
         'HOST': 'localhost'
     }
 }
